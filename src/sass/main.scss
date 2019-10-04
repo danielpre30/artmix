@@ -1,0 +1,14 @@
+@import "base/reset";
+
+@import "abstracts/variables";
+
+@import "components/sideBar.scss";
+#root {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $sm) {
+    & {
+      flex-direction: row;
+    }
+  }
+}

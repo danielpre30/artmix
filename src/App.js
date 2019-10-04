@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./sass/main.scss";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,10 +10,14 @@ import Theater from "./pages/Theater";
 import SideBar from "./modules/SideBar";
 
 function App() {
+  const menuOptions = [
+    { name: "Teatro", to: "/theater" },
+    { name: "Poemas", to: "/poems" }
+  ];
   return (
     <>
-      <SideBar />
       <Router>
+        <SideBar options={menuOptions} />
         <main className="content">
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/theater" />} />

@@ -1,10 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const SideBar = ({ options }) => {
   return (
-    <nav>
+    <nav className="nav">
       {options ? (
-        options.map(({ name, to }) => <NavLink to={`/${to}`}></NavLink>)
+        options.map(({ name, to }) => {
+          return (
+            <Link className="nav_item" to={`${to}`}>
+              {name}
+            </Link>
+          );
+        })
       ) : (
         <div>No se encontró ninguna opción en el menu </div>
       )}

@@ -11,7 +11,7 @@ class Theater extends Component {
   componentDidMount() {
     const storage = this.state.storage;
     storage.clear();
-    const books = [
+    const plays = [
       {
         name: "Don Quijote de la Mancha",
         autor: "Miguel de Cervantes Saavedra",
@@ -24,16 +24,18 @@ class Theater extends Component {
           "https://www.popularlibros.com/imagenes_grandes/9788428/978842855162.JPG"
       }
     ];
-    storage.setItem("books", JSON.stringify(books));
+    storage.setItem("plays", JSON.stringify(plays));
   }
 
   render() {
     const { storage } = this.state;
-    const bookList = JSON.parse(storage.getItem("books"));
+    const playsList = JSON.parse(storage.getItem("plays"));
 
     return (
       <>
-        <CardList list={bookList} />
+        <h1>Artmix</h1>
+        <h2>Theather</h2>
+        <CardList list={playsList} />
       </>
     );
   }
