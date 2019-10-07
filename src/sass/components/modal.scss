@@ -1,0 +1,18 @@
+.modal {
+  &-body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.404);
+    opacity: 0.6;
+    position: absolute;
+  }
+
+  &-content {
+    opacity: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b1ede8;
+  }
+}
