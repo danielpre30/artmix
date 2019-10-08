@@ -28,37 +28,51 @@ const CardList = () => {
                 <div>No se encontró ningún elemento </div>
               )}
               {showModal ? (
-                <Modal>
+                <Modal onClick={toggleShowModal}>
+                  <button className="closeModal" onClick={toggleShowModal}>
+                    x
+                  </button>
                   <h1>Agregar obra</h1>
                   <form
                     onSubmit={e => {
                       e.preventDefault();
                       addPlay();
+                      toggleShowModal();
                     }}
                   >
-                    <label htmlFor="nombre">Nombre</label>
-                    <input
-                      value={newPlay.nombre}
-                      id="nombre"
-                      type="text"
-                      onChange={e =>
-                        handleInputChange("nombre", e.target.value)
-                      }
-                    />
-                    <label htmlFor="autor">Autor</label>
-                    <input
-                      value={newPlay.autor}
-                      id="autor"
-                      type="text"
-                      onChange={e => handleInputChange("autor", e.target.value)}
-                    />
-                    <label htmlFor="image">Image</label>
-                    <input
-                      value={newPlay.image}
-                      id="image"
-                      type="text"
-                      onChange={e => handleInputChange("image", e.target.value)}
-                    />
+                    <div className="formGroup">
+                      <label htmlFor="nombre">Nombre</label>
+                      <input
+                        value={newPlay.nombre}
+                        id="nombre"
+                        type="text"
+                        onChange={e =>
+                          handleInputChange("nombre", e.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="formGroup">
+                      <label htmlFor="autor">Autor</label>
+                      <input
+                        value={newPlay.autor}
+                        id="autor"
+                        type="text"
+                        onChange={e =>
+                          handleInputChange("autor", e.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="formGroup">
+                      <label htmlFor="image">Image</label>
+                      <input
+                        value={newPlay.image}
+                        id="image"
+                        type="text"
+                        onChange={e =>
+                          handleInputChange("image", e.target.value)
+                        }
+                      />
+                    </div>
                     <button>Add</button>
                   </form>
                 </Modal>
